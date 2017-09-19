@@ -86,8 +86,8 @@
             android:id="@+id/comid"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="1234567890"
-            android:layout_marginBottom="12dp"/>
+            android:layout_marginBottom="12dp"
+            android:text="1234567890" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -119,13 +119,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="onOneClick"
-            android:text="Library One"/>
+            android:text="USB Comm"/>
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="onTwoClick"
-            android:text="Library Two"/>
+            android:text="Bluetooth Comm 1"/>
 
     </LinearLayout>
 </ScrollView>
