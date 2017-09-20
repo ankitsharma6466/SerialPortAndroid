@@ -266,7 +266,7 @@ public class BluetoothWrapper {
     }
 
     private class SerialReader extends Thread {
-        private static final int MAX_BYTES = 125;
+        private static final int MAX_BYTES = 4096;
 
         byte[] buffer = new byte[MAX_BYTES];
 
@@ -320,9 +320,6 @@ public class BluetoothWrapper {
     /**
      * Reads from the serial buffer, processing any available messages.  Must return the number of bytes
      * consumer from the buffer
-     *
-     * @author jpetrocik
-     *
      */
     public static interface MessageHandler {
         public int read(int bufferSize, byte[] buffer);

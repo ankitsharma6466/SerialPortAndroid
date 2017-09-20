@@ -143,7 +143,7 @@ public class TwoActivity extends AppCompatActivity {
                                     {
                                         public void run()
                                         {
-                                            responseView.setText(data);
+                                            responseView.append(data);
                                         }
                                     });
                                 }

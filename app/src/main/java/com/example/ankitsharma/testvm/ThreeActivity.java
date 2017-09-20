@@ -11,6 +11,8 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.io.IOException;
+
 public class ThreeActivity extends AppCompatActivity implements BluetoothWrapper.MessageHandler {
 
     TextView responseView;
@@ -19,6 +21,8 @@ public class ThreeActivity extends AppCompatActivity implements BluetoothWrapper
     BroadcastReceiver connectReceiver;
     BroadcastReceiver disconnectReceiver;
 
+    String command;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,6 +30,8 @@ public class ThreeActivity extends AppCompatActivity implements BluetoothWrapper
 
         responseView = (TextView) findViewById(R.id.response);
         bluetoothWrapper = new BluetoothWrapper(this, this, "VM");
+
+        command = getIntent().getStringExtra("command");
 
         connectReceiver = new BroadcastReceiver() {
             @Override
@@ -47,12 +53,19 @@ public class ThreeActivity extends AppCompatActivity implements BluetoothWrapper
     }
 
     public void onSendClick(View v){
-
+        try {
+            bluetoothWrapper.write(command.getBytes());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
     public int read(int bufferSize, byte[] buffer) {
+        String str = new String(buffer);
+        responseView.append(str);
         return 0;
+
     }
 
     @Override
