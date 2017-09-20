@@ -63,7 +63,7 @@ public class ThreeActivity extends AppCompatActivity implements BluetoothWrapper
     @Override
     public int read(int bufferSize, byte[] buffer) {
         String str = new String(buffer);
-        responseView.append(str);
+        responseView.setText(str);
         return 0;
 
     }

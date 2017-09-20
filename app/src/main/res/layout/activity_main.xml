@@ -127,6 +127,12 @@
             android:onClick="onTwoClick"
             android:text="Bluetooth Comm 1"/>
 
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onThreeClick"
+            android:text="Bluetooth Comm 2"/>
+
     </LinearLayout>
 </ScrollView>
 
