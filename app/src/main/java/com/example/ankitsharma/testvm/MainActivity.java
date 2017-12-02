@@ -8,6 +8,7 @@ import android.net.wifi.WifiManager;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
@@ -21,7 +22,7 @@ import java.util.Date;
 
 public class MainActivity extends AppCompatActivity {
 
-    EditText productName, productCode, motorNo, quantity, macaddress, comId, orderNo, connectivity, dateView, timeView;
+    EditText productName, productCode, motorNo, quantity, macaddress, comId, orderNo, connectivity, otherView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
         comId = (EditText) findViewById(R.id.comid);
         orderNo = (EditText) findViewById(R.id.order_no);
         connectivity = (EditText) findViewById(R.id.connectivity);
+        otherView = (EditText) findViewById(R.id.other);
 
         //get mac address
         WifiManager manager = (WifiManager) getApplicationContext().getSystemService(Context.WIFI_SERVICE);
@@ -62,6 +64,13 @@ public class MainActivity extends AppCompatActivity {
     public String getCommand(){
 
         String finalCommand = "";
+
+        String other = otherView.getText().toString();
+
+        if(!TextUtils.isEmpty(other)){
+            //append enter
+            return other + System.lineSeparator();
+        }
 
         Date date = Calendar.getInstance().getTime();
 

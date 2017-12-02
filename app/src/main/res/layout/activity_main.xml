@@ -115,11 +115,18 @@
             android:text="check"
             android:layout_marginBottom="12dp"/>
 
-        <Button
-            android:layout_width="wrap_content"
+        <EditText
+            android:id="@+id/other"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:onClick="onOneClick"
-            android:text="USB Comm"/>
+            android:hint="other command"
+            android:layout_marginBottom="12dp"/>
+
+        <!--<Button-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:onClick="onOneClick"-->
+            <!--android:text="USB Comm"/>-->
 
         <Button
             android:layout_width="wrap_content"
@@ -127,11 +134,11 @@
             android:onClick="onTwoClick"
             android:text="Bluetooth Comm 1"/>
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="onThreeClick"
-            android:text="Bluetooth Comm 2"/>
+        <!--<Button-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:onClick="onThreeClick"-->
+            <!--android:text="Bluetooth Comm 2"/>-->
 
     </LinearLayout>
 </ScrollView>
