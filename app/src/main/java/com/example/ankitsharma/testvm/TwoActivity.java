@@ -99,6 +99,7 @@ public class TwoActivity extends AppCompatActivity {
         if(btSocket != null){
             try {
                 btSocket.getOutputStream().write(command.getBytes());
+                beginListenForData();
                 Toast.makeText(getApplicationContext(), "Command sent Success", Toast.LENGTH_LONG).show();
             } catch (IOException e) {
                 e.printStackTrace();
@@ -110,7 +111,7 @@ public class TwoActivity extends AppCompatActivity {
     void beginListenForData()
     {
         final Handler handler = new Handler();
-        final byte delimiter = 10; //This is the ASCII code for a newline character
+        final byte delimiter = 13; //This is the ASCII code for a newline character
 
         readBufferPosition = 0;
         readBuffer = new byte[1024];

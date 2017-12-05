@@ -69,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
 
         if(!TextUtils.isEmpty(other)){
             //append enter
-            return other + "\n";
+            return other + "\r";
         }
 
         Date date = Calendar.getInstance().getTime();
